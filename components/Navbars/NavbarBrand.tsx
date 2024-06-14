@@ -8,7 +8,7 @@ const NavbarBrand = () => {
       className="logo d-flex align-items-center me-auto me-xl-0"
     >
       <MdFoodBank id="sitename" style={{ width: "30", height: "30" }} />
-      <h1 id="sitename">Nomato</h1>
+      <h1 id="sitename">Foodchain</h1>
     </Navbar.Brand>
   );
 };
