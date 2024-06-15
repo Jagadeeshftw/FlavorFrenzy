@@ -1,78 +1,48 @@
-"use client";
-import { useEffect } from "react";
-import carousel1 from "../../src/assets/img/Carousel/Carousel1.jpg";
-import carousel2 from "../../src/assets/img/Carousel/Carousel2.jpg";
-import carousel3 from "../../src/assets/img/Carousel/Carousel3.jpg";
-import carousel4 from "../../src/assets/img/Carousel/Carousel4.jpg";
-import carousel5 from "../../src/assets/img/Carousel/Carousel5.jpg";
-import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import CarouselItem from "./Carousel-Items";
+import { Carousel } from "react-bootstrap";
+import { CarouselItem } from "react-bootstrap";
+import { CarouselCaption } from "react-bootstrap";
+import CarouselItems from "./Carousel-Items";
 
-const Carousel = () => {
-  console.log("Carousel component rendered");
-
-  useEffect(() => {
-    console.log("Running useEffect");
-
-    const script = document.createElement("script");
-    script.src = "/js/carousel-setup.js";
-    script.async = true;
-    document.body.appendChild(script);
-    console.log("Script added");
-
-    return () => {
-      console.log("Cleaning up script");
-      document.body.removeChild(script);
-    };
-  }, []);
-
+const CarouselComponent = () => {
   return (
     <section id="hero">
       <div className="hero-container">
-        <div
-          id="heroCarousel"
-          data-bs-interval="5000"
-          className="carousel slide carousel-fade"
-          data-bs-ride="carousel"
-        >
-          <ol
-            className="carousel-indicators"
-            id="hero-carousel-indicators"
-          ></ol>
-          <div className="carousel-inner" role="listbox">
-            <CarouselItem image={carousel1} active={true} />
-            <CarouselItem image={carousel2} active={false} />
-            <CarouselItem image={carousel3} active={false} />
-            <CarouselItem image={carousel4} active={false} />
-            <CarouselItem image={carousel5} active={false} />
-            <a
-              className="carousel-control-prev"
-              href="#heroCarousel"
-              role="button"
-              data-bs-slide="prev"
+        <Carousel fade controls interval={5000}>
+          {CarouselItems.map((item, index) => (
+            <CarouselItem
+              key={index}
+              style={{ backgroundImage: `url(${item.src.src})` }}
             >
-              <BsChevronLeft
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              />
-            </a>
-
-            <a
-              className="carousel-control-next"
-              href="#heroCarousel"
-              role="button"
-              data-bs-slide="next"
-            >
-              <BsChevronRight
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              />
-            </a>
-          </div>
-        </div>
+              <CarouselCaption className="carousel-container">
+                <div className="carousel-content">
+                  <h2 className="animate__animated animate__fadeInDown">
+                    <span>Delicious</span> Restaurant
+                  </h2>
+                  <p className="animate__animated animate__fadeInUp">
+                    {item.caption}
+                  </p>
+                  <div>
+                    <a
+                      href="#menu"
+                      className="btn-menu animate__animated animate__fadeInUp scrollto"
+                    >
+                      Explore Our Menu
+                    </a>
+                    <a
+                      href="#book-a-table"
+                      className="btn-book animate__animated animate__fadeInUp scrollto"
+                    >
+                      Join the Community
+                    </a>
+                  </div>
+                </div>
+              </CarouselCaption>
+            </CarouselItem>
+          ))}
+        </Carousel>
       </div>
     </section>
   );
 };
 
-export default Carousel;
+export default CarouselComponent;
