@@ -16,7 +16,7 @@ const CarouselComponent = () => {
               <CarouselCaption className="carousel-container">
                 <div className="carousel-content">
                   <h2 className="animate__animated animate__fadeInDown">
-                    <span>Delicious</span> Restaurant
+                    Welcome To <span>FoodChain</span>
                   </h2>
                   <p className="animate__animated animate__fadeInUp">
                     {item.caption}
