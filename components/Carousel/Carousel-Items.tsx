@@ -1,47 +1,39 @@
-import React from "react";
+import carousel1 from "../../src/assets/img/Carousel/Carousel1.jpg";
+import carousel2 from "../../src/assets/img/Carousel/Carousel2.jpg";
+import carousel3 from "../../src/assets/img/Carousel/Carousel3.jpg";
+import carousel4 from "../../src/assets/img/Carousel/Carousel4.jpg";
+import carousel5 from "../../src/assets/img/Carousel/Carousel5.jpg";
+const CarouselItems = [
+  {
+    src: carousel1,
+    alt: "First slide",
+    caption:
+      "Discover the future of food delivery with FoodChain. Our decentralized platform connects you directly with local farmers and chefs, ensuring fresh, high-quality meals delivered to your doorstep. Experience transparency, sustainability, and a seamless culinary journey with every order.",
+  },
+  {
+    src: carousel2,
+    alt: "Second slide",
+    caption:
+      "Discover the future of food delivery with FoodChain. Our decentralized platform connects you directly with local farmers and chefs, ensuring fresh, high-quality meals delivered to your doorstep. Experience transparency, sustainability, and a seamless culinary journey with every order.",
+  },
+  {
+    src: carousel3,
+    alt: "Third slide",
+    caption:
+      "Discover the future of food delivery with FoodChain. Our decentralized platform connects you directly with local farmers and chefs, ensuring fresh, high-quality meals delivered to your doorstep. Experience transparency, sustainability, and a seamless culinary journey with every order.",
+  },
+  {
+    src: carousel4,
+    alt: "Fourth slide",
+    caption:
+      "Discover the future of food delivery with FoodChain. Our decentralized platform connects you directly with local farmers and chefs, ensuring fresh, high-quality meals delivered to your doorstep. Experience transparency, sustainability, and a seamless culinary journey with every order.",
+  },
+  {
+    src: carousel5,
+    alt: "Fifth slide",
+    caption:
+      "Discover the future of food delivery with FoodChain. Our decentralized platform connects you directly with local farmers and chefs, ensuring fresh, high-quality meals delivered to your doorstep. Experience transparency, sustainability, and a seamless culinary journey with every order.",
+  },
+];
 
-interface CarouselItemProps {
-  image: any;
-  active: boolean;
-}
-
-const CarouselItem: React.FC<CarouselItemProps> = ({ image, active }) => {
-  console.log(image);
-  return (
-    <div
-      className={active ? "carousel-item active" : "carousel-item"}
-      style={{ backgroundImage: `url(${image.src})` }}
-    >
-      <div className="carousel-container">
-        <div className="carousel-content">
-          <h2 className="animate__animated animate__fadeInDown">
-            Welcome to <span>FoodChain</span>
-          </h2>
-          <p className="animate__animated animate__fadeInUp">
-            Discover the future of food delivery with FoodChain. Our
-            decentralized platform connects you directly with local farmers and
-            chefs, ensuring fresh, high-quality meals delivered to your
-            doorstep. Experience transparency, sustainability, and a seamless
-            culinary journey with every order.
-          </p>
-          <div>
-            <a
-              href="#menu"
-              className="btn-menu animate__animated animate__fadeInUp scrollto"
-            >
-              Explore Our Menu
-            </a>
-            <a
-              href="#book-a-table"
-              className="btn-book animate__animated animate__fadeInUp scrollto"
-            >
-              Join the Community
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default CarouselItem;
+export default CarouselItems;
