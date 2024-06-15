@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import BootstrapClient from "../../components/BootstrapClient";
 import "animate.css";
 import "./globals.scss";
 import NavbarItem from "../../components/Navbars/Navbar";
@@ -22,7 +21,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <NavbarItem />
         {children}
-        <BootstrapClient />
       </body>
     </html>
   );
