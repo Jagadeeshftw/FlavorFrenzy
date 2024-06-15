@@ -1,29 +1,29 @@
-"use client";
 import { Nav } from "react-bootstrap";
-import Link from "next/link";
+import NavLink from "./NavLink";
 const Navs = () => {
   return (
     <>
       <Nav id="navmenu" className="navmenu">
         <ul>
           <li>
-            <Link href="/" className="active">
+            <NavLink href={"/"}>
+              {" "}
               Home
               <br />
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link href="/community">Community</Link>
+            <NavLink href={"/community"}> Community</NavLink>
           </li>
           <li>
-            <Link href="/menu">Menu</Link>
+            <NavLink href={"/menu"}> Menu</NavLink>
           </li>
 
           <li className="dropdown">
-            <Link href="#">
+            <NavLink href={"/dropdown"}>
               <span>Dropdown</span>
               <i className="bi bi-chevron-down toggle-dropdown"></i>
-            </Link>
+            </NavLink>
             <ul>
               <li>
                 <a href="#">Dropdown 1</a>
@@ -48,7 +48,7 @@ const Navs = () => {
             </ul>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <NavLink href="/contact">Contact</NavLink>
           </li>
         </ul>
         <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
